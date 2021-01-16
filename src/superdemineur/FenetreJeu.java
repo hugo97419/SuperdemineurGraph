@@ -50,13 +50,13 @@ public class FenetreJeu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         panneau_info = new javax.swing.JTextArea();
         panneau_infojoueur = new javax.swing.JPanel();
-        bnt_kit = new javax.swing.JLabel();
+        lbl_kit = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        btn_joueur = new javax.swing.JLabel();
-        btn_pdv = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lbl_joueur = new javax.swing.JLabel();
+        lbl_pdv = new javax.swing.JLabel();
+        l = new javax.swing.JLabel();
         panneau_joueur1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -127,8 +127,8 @@ public class FenetreJeu extends javax.swing.JFrame {
         panneau_infojoueur.setBackground(new java.awt.Color(102, 255, 255));
         panneau_infojoueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bnt_kit.setText("joueur_kit");
-        panneau_infojoueur.add(bnt_kit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+        lbl_kit.setText("joueur_kit");
+        panneau_infojoueur.add(lbl_kit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
 
         jLabel3.setText("Points de vie :");
         panneau_infojoueur.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
@@ -139,15 +139,15 @@ public class FenetreJeu extends javax.swing.JFrame {
         jLabel5.setText("Joueur :");
         panneau_infojoueur.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        btn_joueur.setText("nomjoueur");
-        panneau_infojoueur.add(btn_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
+        lbl_joueur.setText("nomjoueur");
+        panneau_infojoueur.add(lbl_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
-        btn_pdv.setText("joueur_pdv");
-        panneau_infojoueur.add(btn_pdv, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
+        lbl_pdv.setText("joueur_pdv");
+        panneau_infojoueur.add(lbl_pdv, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
-        jLabel2.setText("INFORMATION JOUEUR :");
-        panneau_infojoueur.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 210, -1));
+        l.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        l.setText("INFORMATION JOUEUR :");
+        panneau_infojoueur.add(l, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 210, -1));
 
         getContentPane().add(panneau_infojoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 250, 220, 170));
 
@@ -185,7 +185,12 @@ public class FenetreJeu extends javax.swing.JFrame {
     private void btn_start1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_start1ActionPerformed
 panneau_infojoueur.setVisible(true);
         information.setVisible(true);
-       initialiserPartie();    }//GEN-LAST:event_btn_start1ActionPerformed
+        initialiserPartie();
+        panneau_grille.repaint();
+        panneau_grille2.repaint();
+        panneau_grille3.repaint();
+        btn_start1.setEnabled(false);
+    }//GEN-LAST:event_btn_start1ActionPerformed
 
     private void debutantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_debutantActionPerformed
         panneau_grille2.setVisible(false);
@@ -267,6 +272,9 @@ void initialiserPartie() {
         String nomJoueur =  pseudo1.getText();
         Joueur J1 = new Joueur(nomJoueur,3); //joueur sans pseudo avc 3PV
         System.out.println("Milestone1");
+        lbl_joueur.setText(nomJoueur);
+        lbl_pdv.setText(J1.pointDeVie+"");
+        lbl_kit.setText(J1.nbKit+"");
         choix = choixmenu();
         System.out.println("Milestone2");
         //on definit le coté en fonction du choix
@@ -345,16 +353,12 @@ void valeurcoté (int ch_oix){ // dimensions de la grille en fonction du mode (g
     }
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bnt_kit;
-    private javax.swing.JLabel btn_joueur;
-    private javax.swing.JLabel btn_pdv;
     private javax.swing.JButton btn_start1;
     private javax.swing.JButton debutant;
     private javax.swing.JButton expert;
     private javax.swing.JPanel information;
     private javax.swing.JButton intermediaire;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -363,6 +367,10 @@ void valeurcoté (int ch_oix){ // dimensions de la grille en fonction du mode (g
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel l;
+    private javax.swing.JLabel lbl_joueur;
+    private javax.swing.JLabel lbl_kit;
+    private javax.swing.JLabel lbl_pdv;
     private javax.swing.JPanel panneau_grille;
     private javax.swing.JPanel panneau_grille2;
     private javax.swing.JPanel panneau_grille3;

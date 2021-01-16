@@ -195,7 +195,7 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="bnt_kit">
+        <Component class="javax.swing.JLabel" name="lbl_kit">
           <Properties>
             <Property name="text" type="java.lang.String" value="joueur_kit"/>
           </Properties>
@@ -235,7 +235,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="btn_joueur">
+        <Component class="javax.swing.JLabel" name="lbl_joueur">
           <Properties>
             <Property name="text" type="java.lang.String" value="nomjoueur"/>
           </Properties>
@@ -245,7 +245,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="btn_pdv">
+        <Component class="javax.swing.JLabel" name="lbl_pdv">
           <Properties>
             <Property name="text" type="java.lang.String" value="joueur_pdv"/>
           </Properties>
@@ -255,7 +255,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="l">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Grande" size="16" style="1"/>
