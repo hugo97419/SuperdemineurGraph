@@ -294,11 +294,11 @@ void initialiserPartie() {
 
 int choixmenu() {
     int choix=0;
-    if (debutant != null && intermediaire == null && expert == null) {
+    if (debutant != null) {
             choix = 1;
-           } else if(debutant == null && intermediaire != null && expert == null){
+           } else if(intermediaire != null){
             choix = 2;
-        } else if(debutant == null && intermediaire == null && expert != null){
+        } else if(expert != null){
             choix = 3;
         }
     return choix;
